@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html class="fontawesome-i2svg-active fontawesome-i2svg-complete">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+<h2>User info</h2>
+<div>
+  <%= image_tag user.get_profile_image %><br>
+  <table class="table">
+  <tbody>
+  <tr>
+    <th>name</th>
+    <th><%= user.name %></th><br>
+  </tr>
+  
+  <tr>
+    <th>introduction</th>
+    <th><%= user.introduction %></th><br>
+  </tr>
+  </tbody>
+  </table>

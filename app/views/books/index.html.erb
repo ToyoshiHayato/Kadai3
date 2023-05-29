@@ -1,1 +1,36 @@
-<h1>Index</h1>
+<% if @book_new.errors.any? %>
+ <%= @book_new.errors.count %>errors prohibited this obj from being saved:
+ <ul>
+   <% @book_new.errors.full_messages.each do |message| %>
+   <li><%= message %></li>
+   <% end %>
+   <ul>
+     <% end %>
+<%= render 'list', user: @user %>
+  <%= link_to "user_edit", edit_user_path(@user) %>
+
+
+<h2>New book</h2>
+<%= form_with model: @book do |f| %>
+<h6>Title</h6>
+<%= f.text_field :title %>
+<h6>Opinion</h6>
+<%= f.text_area :body %><br>
+<%= f.submit 'Create Book' %>
+<% end %>
+
+<h2>Books</h2>
+<tr>
+  <th>Title</th>
+  <th>Opinion</th>
+</tr><br>
+<% @books.each do |book| %>
+<%= image_tag book.user.get_profile_image %>
+
+<%= link_to book_path(book.id) do %>
+<%= book.title %>
+<% end %>
+
+<%= book.body %><br>
+<% end %>
+</table>

@@ -1,0 +1,20 @@
+<html class="fontawesome-i2svg-active fontawesome-i2svg-complete">
+<div class="container px-5 px-sm-0">
+  <div class="row">
+    <div class="col-md-3">
+<h2>User info</h2>
+<div>
+  <%= image_tag users.get_profile_image %><br>
+  <table class="table">
+  <tbody>
+  <tr>
+    <th>name</th>
+    <th><%= users.name %></th><br>
+  </tr>
+  
+  <tr>
+    <th>introduction</th>
+    <th><%= users.introduction %></th><br>
+  </tr>
+  </tbody>
+  </table>
