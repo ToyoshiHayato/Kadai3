@@ -1,5 +1,14 @@
+<!DOCTYPE html>
+<html class="fontawesome-i2svg-active fontawesome-i2svg-complete">
+ 
+<p id="notice"></p>
+     <div class="container">
+      <div class="row">
+       <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
+<h1>Editing Book</h1>
+
 <% if @book.errors.any? %>
- <%= @book.errors.count %>errors prohibited this obj from being saved:
+ <h3><%= @book.errors.count %>errors prohibited this obj from being saved:</h3>
  <ul>
    <% @book.errors.full_messages.each do |message| %>
    <li><%= message %></li>
@@ -7,16 +16,39 @@
    <ul>
      <% end %>
 
-<h1>Editing Book</h1>
-<%= form_with model: @book do |f| %>
-<label for="inputTitle">Title</label><br>
-<%= f.text_field :title, autofocus: true, id:"inputTitle",placeholder:""%><br>
-<label for="inputOpinion">Opinion</label><br>
-<%= f.text_field :body, autofocus: true, id:"inputBody",placeholder:""%><br>
-<%= f.submit "Update Book" %>
-<% end %>
 
+<%= form_with model: @book do |f| %>
+<div class="form-group">
+ <div class="field_with_errors">
+<label for="book_title">Title</label><br>
+</div>
+<div class="field_with_errors">
+<%= f.text_field :title, autofocus: true, id:"inputTitle",placeholder:"", class:"form-control book_title" %><br>
+</div>
+</div>
+<div class="form-group">
+<label for="inputOpinion">Opinion</label><br>
+<%= f.text_field :body, autofocus: true, id:"inputBody",placeholder:"", class:"form-control book_body" %><br>
+</div>
+<div class="form-group">
+<%= f.submit "Update Book", class:"btn btn-success" %>
+</div>
+<% end %><br>
 <%= link_to "Show", book_path %>
 |
 <%= link_to "Back", books_path %>
+</div>
+</div>
+</div>
+</main>
+<footer>
+ <div class="container mt-5">
+  <div class="row">
+   <div class="mx-auto">
 <p>CopyRight Infratop.inc</p>
+</div>
+</div>
+</div>
+</footer>
+</body>
+</html>
